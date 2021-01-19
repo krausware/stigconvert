@@ -16,9 +16,13 @@ new_check = input ("Enter new checklist location")
     
 
 #with open(old_check) as oldf:
-
+#import old XML data
+oldtree = ET.parse(old_check)
+rootOldTree = oldtree.getroot()
 
 #with open(new_check) as newf:
+newtree = ET.parse(new_check)
+rootNewTree = newtree.getroot()
        
 with open(csvmap) as csvfile:
  f = csv.reader(csvfile, delimiter=',')
@@ -39,12 +43,18 @@ with open(csvmap) as csvfile:
   oldRulID_rule.append(row[3])
   newVulID.append(row[4])
   newRulID.append(row[5])        	 
-  print(oldVulID[y])
-  y +=1
+  #print(oldVulID[y])
+  #y +=1
 
-	#  
+
+ for oldVul in oldVulID:
+ 
+  for attribute_Data in oldtree.findall('ATTRIBUTE_DATA'):
+   print(attribute_Data.attrib)
+   #if attribute_Data == oldrul:
+   #print(oldVul)
         
-    s      
+          
         
         
 
@@ -61,9 +71,9 @@ with open(csvmap) as csvfile:
     # print(oldRulName)   
     #    with open(old_check) as oldreader
 
-    #   with open(new_check) as newreader
+    #  with open(new_check) as newreader
     
-#     for indID in oldVulID
+    #  for indID in oldVulID
      
        #search for old tags
         
@@ -77,12 +87,9 @@ with open(csvmap) as csvfile:
         
 
 
-        
-        
+            
  
 # set the flag associated with each 
-	
-	
 	
 	
 	
