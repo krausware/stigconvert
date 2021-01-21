@@ -1,4 +1,4 @@
-	
+#!/usr/bin python	
 
 
  # CSV: OLD Rule name, OLD VulID, OLD RulID, OLD_RulID_rule, NEW VulID, NEW RulID 
@@ -47,12 +47,30 @@ with open(csvmap) as csvfile:
   #y +=1
 
 
- for oldVul in oldVulID:
+
+
+
  
-  for attribute_Data in oldtree.findall('ATTRIBUTE_DATA'):
-   print(attribute_Data.attrib)
-   #if attribute_Data == oldrul:
-   #print(oldVul)
+for child in rootOldTree.iter():
+ for vulID in oldVulID:
+  if child.text == vulID:
+  #is there a way to call the array position of this match?
+  #save array position
+  #find the next status
+  #capture the next status
+  #capture the comments
+   
+ 
+
+ 
+ # for oldVul in oldVulID:
+ 
+ # print(rootOldTree.tag)
+
+ # for stig in rootOldTree.find('VULN'):
+ # print(stig.attrib)
+ # if attribute_Data == oldrul:
+ # print(oldVul)
         
           
         
