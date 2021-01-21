@@ -32,6 +32,8 @@ with open(csvmap) as csvfile:
  oldRulID_rule=[]
  newVulID=[]
  newRulID=[]
+ status=[]
+ comments=[]
  y=0
 
  for row in f:
@@ -54,9 +56,12 @@ with open(csvmap) as csvfile:
 for child in rootOldTree.iter():
  for vulID in oldVulID:
   if child.text == vulID:
+   status[y] = child.find('STATUS')
+   print(status[y])
+   y+=1 
   #is there a way to call the array position of this match?
-  #save array position
-  #find the next status
+  #save array position pos = 
+  #find the next status 
   #capture the next status
   #capture the comments
    
